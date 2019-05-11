@@ -1,0 +1,39 @@
+<head>
+	<meta charset="utf-8">
+	<title>Inicio de Sesion y registro</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,
+	user-scalable=no">
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:100,300,400,700' rel='stylesheet'
+	type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700"
+	rel="stylesheet">
+	</head>
+
+<body>
+	{{> bertAlert}}
+	<!-- This is where main layout is rendered --> 
+</body>
+
+<template name="main_layout">
+	<div class="main-content">
+		{{> yield}}
+	</div>
+</template>
+<template name="login">
+	{{#if currentUser}}
+	<h3 class="black">You are logged in. return <a href="/profile">home</a></h3>
+	{{else}}
+	<form class="form-signin">
+		<h2 class="form-signin-heading">Inicio de Sesión</h2>
+		<label for="email" class="sr-only">Correo Electronico</label>
+		<input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico">
+		<label for="password" class="sr-only">Contraseña</label>
+		<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
+		<button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Iniciar Sesión</button>
+		<p>¿No tienes una cuenta? <a href="/signup">Registro</a></p>
+	</form>
+	{{/if}}
+</template>

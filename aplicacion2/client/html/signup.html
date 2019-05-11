@@ -1,0 +1,19 @@
+<template name="signup">
+	{{#if currentUser}}
+	<h3 class="white">Ya iniciaste sesión <a href="/">home</a></h3>
+	{{else}}
+	<form class="form-signup" id="register-form">
+		<h2 class="form-signin-heading">Crear Cuenta</h2>
+		<label for="username" class="sr-only">Nombre de Usuario</label>
+		<input type="text" name="username" id="username" class="form-control" placeholder="Nombre de Usuario">
+		<label for="email" class="sr-only">Correo Electronico</label>
+		<input type="email" name="email" id="email" class="form-control" placeholder="Correo Electronico">
+		<label for="password" class="sr-only">Contraseña</label>
+		<input type="password" name="password" id="password" class="form-control" placeholder="Contraseña">
+		<label for="password2" class="sr-only">Confirmar Contraseña</label>
+		<input type="password" name="password2" id="password2" class="form-control" placeholder="Confirmar Contraseña">
+		<button type="submit" id="login-btn" class="btn btn-lg btn-primary btn-block">Iniciar Sesion</button>
+
+	</form>
+	{{/if}}
+</template>
